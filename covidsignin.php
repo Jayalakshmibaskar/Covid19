@@ -24,7 +24,7 @@ else{
                 }
                 $myObj->error = "false";
                 $myObj->messages = $messages;
-                $myObj->msg="Signin Successful";
+                $myObj->status="Signin Successful";
             
             
            
