@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 12, 2020 at 12:48 PM
+-- Generation Time: Apr 12, 2020 at 06:29 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.4
 
@@ -47,16 +47,18 @@ INSERT INTO `messages` (`Msgid`, `Msg`) VALUES
 
 CREATE TABLE `orders` (
   `OrderId` int(255) NOT NULL,
-  `Orders` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL
+  `Orders` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL,
+  `UserId` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `orders`
 --
 
-INSERT INTO `orders` (`OrderId`, `Orders`) VALUES
-(4, '[{\"prodName\":\"orange\",\"Quantity\":\"2\"},{\"prodName\":\"apple\",\"Quantity\":\"2\"},{\"prodName\":\"grapes\",\"Quantity\":\"2\"},{\"prodName\":\"guava\",\"Quantity\":\"2\"}]'),
-(6, '[\r\n{\r\n\"prodName\":\"carrot\",\r\n\"Quantity\":\"2\"\r\n},{\r\n\"prodName\":\"tomato\",\r\n\"Quantity\":\"2\"\r\n},{\r\n\"prodName\":\"potato\",\r\n\"Quantity\":\"2\"\r\n},{\r\n\"prodName\":\"lady\'s finger\",\r\n\"Quantity\":\"2\"\r\n}\r\n]');
+INSERT INTO `orders` (`OrderId`, `Orders`, `UserId`) VALUES
+(4, '[{\"prodName\":\"orange\",\"Quantity\":\"2\"},{\"prodName\":\"apple\",\"Quantity\":\"2\"},{\"prodName\":\"grapes\",\"Quantity\":\"2\"},{\"prodName\":\"guava\",\"Quantity\":\"2\"}]', 1),
+(6, '[\r\n{\r\n\"prodName\":\"carrot\",\r\n\"Quantity\":\"2\"\r\n},{\r\n\"prodName\":\"tomato\",\r\n\"Quantity\":\"2\"\r\n},{\r\n\"prodName\":\"potato\",\r\n\"Quantity\":\"2\"\r\n},{\r\n\"prodName\":\"lady\'s finger\",\r\n\"Quantity\":\"2\"\r\n}\r\n]', 2),
+(1212, '[\r\n{\r\n\"prodName\":\"carrot\",\r\n\"Quantity\":\"2\"\r\n},{\r\n\"prodName\":\"tomato\",\r\n\"Quantity\":\"2\"\r\n},{\r\n\"prodName\":\"potato\",\r\n\"Quantity\":\"2\"\r\n},{\r\n\"prodName\":\"lady\'s finger\",\r\n\"Quantity\":\"2\"\r\n}\r\n]', 3);
 
 -- --------------------------------------------------------
 
@@ -89,7 +91,9 @@ INSERT INTO `user` (`UserId`, `Name`, `Email`, `Password`, `Phone`, `Address`, `
 (10, 'gerg', 'fegsfssd@gmail.com', 'acc@134', '8794012630', 'no 123 yz street', 'chennai', 'trader'),
 (11, 'gerg', 'sfssd@gmail.com', 'acc@134', '8794012630', 'no 123 yz street', 'chennai', 'trader'),
 (12, 'gerg', 'sfcgh@gmail.com', 'acc@134', '8794012630', 'no 123 yz street', 'chennai', 'trader'),
-(13, 'gerg', 'kjkgh@gmail.com', 'acc@134', '8794012630', 'no 123 yz street', 'chennai', 'trader');
+(13, 'gerg', 'kjkgh@gmail.com', 'acc@134', '8794012630', 'no 123 yz street', 'chennai', 'trader'),
+(14, 'test', 'test', 'test', 'test', 'test', 'test', 'trader'),
+(15, 'test', 'test', 'test', 'test', 'test', 'test', 'trader');
 
 --
 -- Indexes for dumped tables
@@ -121,13 +125,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `OrderId` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `OrderId` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1213;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `UserId` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `UserId` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
