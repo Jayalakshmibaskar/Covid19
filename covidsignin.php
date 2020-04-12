@@ -4,6 +4,8 @@ if(!$conn){
     die("Connecton failed:" .mysqli_connect_error());
 }
 else{
+    //echo "skgskg";
+    //echo "sggbjsgh";
      
      $email=$_POST['email'];
      $password=$_POST['pwd'];
