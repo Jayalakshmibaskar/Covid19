@@ -17,10 +17,10 @@ else{
             $selectmsg="select Msg from messages";
             $result1=mysqli_query($conn,$selectmsg);
             if(mysqli_num_rows($result1)>0){
-                while ($row = mysqli_fetch_object($result1)) {
-                    
+                while ($row = mysqli_fetch_object($result1)) {                    
                     array_push($messages,$row->Msg);
                 }
+            
             $myObj->error = "false";
             $myObj->messages = $messages;
             $myJSON = json_encode($myObj);
