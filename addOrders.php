@@ -7,7 +7,7 @@ else{
     
     $order=$_POST['orders'];
     $myObj=(object)null;
-    $insertorder="insert into orders('Orders')values('$order)";
+    $insertorder="insert into orders('Orders')values('$order')";
     $ins_res=mysqli_query($conn,$insertorder);
         $myObj->error = "false";
         $myObj->message = "sucessfully added to cart";
